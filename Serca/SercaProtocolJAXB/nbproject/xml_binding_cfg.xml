@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='SercaProtocolJAXB' version='1.0'>
+	<schema type='-xmlschema' package='it.unibo.cs.swarch.serca.protocol.jaxb' name='SercaProtocolBinding'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='xml-resources/jaxb/SercaProtocolBinding/sercaProtocol.xsd' origLocation='src/it/unibo/cs/swarch/serca/protocol/xsd/sercaProtocol.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>

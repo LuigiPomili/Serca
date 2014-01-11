@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1" 
+    android:baselineAligned="true" 
+    android:orientation="vertical"
+    android:id="@+id/RegistrationLayout">
+     <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Username"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace" 
+    			android:id="@+id/textUsername" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center" 
+    			android:gravity="center|left">
+    </TextView>
+    <EditText 	android:id="@+id/editUsername" 
+    			android:layout_height="40dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center">
+        <requestFocus></requestFocus>
+    </EditText>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Name"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace" 
+    			android:id="@+id/textName" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center" 
+    			android:gravity="center|left">
+    </TextView>
+    <EditText 	android:id="@+id/editName" 
+    			android:layout_height="40dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center">
+    </EditText>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Surname"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace" 
+    			android:id="@+id/textSurname" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center" 
+    			android:gravity="center|left">
+    </TextView>
+    <EditText 	android:id="@+id/editSurname" 
+    			android:layout_height="40dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center">
+    </EditText>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Mail"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace" 
+    			android:id="@+id/textMail" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center" 
+    			android:gravity="center|left">
+    </TextView>
+    <EditText 	android:id="@+id/editMail" 
+    			android:layout_height="40dp" 
+    			android:layout_width="275dp" 
+    			android:layout_gravity="center">
+    </EditText>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Password"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace"  
+    			android:id="@+id/textPassword" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:gravity="center|left" 
+    			android:layout_gravity="center">
+    </TextView>
+    <EditText 	android:id="@+id/editPassword" 
+    			android:layout_width="275dp" 
+    			android:layout_height="40dp"
+    			android:inputType="textPassword" 
+    			android:layout_gravity="center">
+    </EditText>
+    <TextView 	android:textAppearance="?android:attr/textAppearanceSmall" 
+    			android:text="Confirm Password"
+    			android:textColor="#FFFFFF"
+    			android:typeface="monospace"  
+    			android:id="@+id/textConfPass" 
+    			android:layout_height="20dp" 
+    			android:layout_width="275dp" 
+    			android:gravity="center|left" 
+    			android:layout_gravity="center">
+    </TextView>
+    <EditText 	android:id="@+id/editConfPass" 
+    			android:layout_width="275dp" 
+    			android:layout_height="40dp"
+    			android:inputType="textPassword" 
+    			android:layout_gravity="center">
+    </EditText>
+    <Button 	android:text="Register" 
+    			android:layout_height="wrap_content" 
+    			android:id="@+id/buttRegistration" 
+    			android:layout_gravity="right" 
+    			android:layout_marginTop="30dp" android:layout_width="88dp">
+    </Button>
+ </LinearLayout>

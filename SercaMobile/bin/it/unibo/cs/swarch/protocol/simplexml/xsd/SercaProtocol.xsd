@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.serca.org/protocol"
+    xmlns:ns2="http://www.serca.org/protocol" elementFormDefault="unqualified"
+    attributeFormDefault="unqualified">
+
+    <element name="registration">
+        <complexType>
+            <sequence>
+                <element name="uid">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="10"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="pwd">
+                    <simpleType>
+                        <restriction base="string">
+                            <pattern value="\w+"/>
+                            <minLength value="6"/>
+                            <maxLength value="32"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="name">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="2"/>
+                            <maxLength value="50"/>
+                            <pattern value="(\p{L}+\s*)+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="surname">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="2"/>
+                            <maxLength value="50"/>
+                            <pattern value="(\p{L}+\s*)+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="mail">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="5"/>
+                            <whiteSpace value="collapse"/>
+                            <maxLength value="100"/>
+                            <pattern value="\p{L}(\w|\.|\_|\w)+\p{L}@(\w|\.|_\w)+\.([a-zA-Z]{2,4})"
+                            />
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="registrationReply">
+        <simpleType>
+            <restriction base="string">
+                <enumeration value="user registered"/>
+                <enumeration value="error during user registration"/>
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="login">
+        <complexType>
+            <sequence>
+                <element name="uid">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="pwd">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="32"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="loginReply">
+        <simpleType>
+            <restriction base="string">
+                <enumeration value="LOGGED_IN"/>
+                <enumeration value="INVALID_USER_OR_PASSWORD"/>
+            </restriction>
+        </simpleType>
+    </element>
+    <element name="problem">
+        <complexType>
+            <sequence>
+                <element name="description">
+                    <simpleType>
+                        <restriction base="string"> </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="outgoingChatMessage">
+        <complexType>
+            <sequence>
+                <element name="scope">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="global"/>
+                            <enumeration value="local"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="message">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="1"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="incomingChatMessage">
+        <complexType>
+            <sequence>
+                <element name="scope">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="global"/>
+                            <enumeration value="local"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="sender">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="2"/>
+                            <maxLength value="50"/>
+                            <pattern value="(\p{L}+\s*)+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="message">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="1"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createTable">
+        <complexType>
+            <sequence>
+                <element name="botsno">
+                    <simpleType>
+                        <restriction base="int">
+                            <minInclusive value="0"/>
+                            <maxInclusive value="3"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="createTableReply">
+        <complexType>
+            <sequence>
+                <element name="created" type="boolean"/>
+                <element name="cardsList">
+                    <complexType>
+                        <sequence>
+                            <element maxOccurs="13" minOccurs="13" name="card">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="AH"/>
+                                        <enumeration value="2H"/>
+                                        <enumeration value="3H"/>
+                                        <enumeration value="4H"/>
+                                        <enumeration value="5H"/>
+                                        <enumeration value="6H"/>
+                                        <enumeration value="7H"/>
+                                        <enumeration value="8H"/>
+                                        <enumeration value="9H"/>
+                                        <enumeration value="10H"/>
+                                        <enumeration value="JH"/>
+                                        <enumeration value="QH"/>
+                                        <enumeration value="KH"/>
+                                        <enumeration value="AC"/>
+                                        <enumeration value="2C"/>
+                                        <enumeration value="3C"/>
+                                        <enumeration value="4C"/>
+                                        <enumeration value="5C"/>
+                                        <enumeration value="6C"/>
+                                        <enumeration value="7C"/>
+                                        <enumeration value="8C"/>
+                                        <enumeration value="9C"/>
+                                        <enumeration value="10C"/>
+                                        <enumeration value="JC"/>
+                                        <enumeration value="QC"/>
+                                        <enumeration value="KC"/>
+                                        <enumeration value="AD"/>
+                                        <enumeration value="2D"/>
+                                        <enumeration value="3D"/>
+                                        <enumeration value="4D"/>
+                                        <enumeration value="5D"/>
+                                        <enumeration value="6D"/>
+                                        <enumeration value="7D"/>
+                                        <enumeration value="8D"/>
+                                        <enumeration value="9D"/>
+                                        <enumeration value="10D"/>
+                                        <enumeration value="JD"/>
+                                        <enumeration value="QD"/>
+                                        <enumeration value="KD"/>
+                                        <enumeration value="AS"/>
+                                        <enumeration value="2S"/>
+                                        <enumeration value="3S"/>
+                                        <enumeration value="4S"/>
+                                        <enumeration value="5S"/>
+                                        <enumeration value="6S"/>
+                                        <enumeration value="7S"/>
+                                        <enumeration value="8S"/>
+                                        <enumeration value="9S"/>
+                                        <enumeration value="10S"/>
+                                        <enumeration value="JS"/>
+                                        <enumeration value="QS"/>
+                                        <enumeration value="KS"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+                <element name="gameIsStarted" type="boolean"/>
+                <element minOccurs="0" name="firstPlayer">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="4"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="tablesList">
+        <complexType>
+            <sequence maxOccurs="1">
+                <element maxOccurs="unbounded" name="table" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="id">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <minLength value="6"/>
+                                        <maxLength value="15"/>
+                                        <pattern value="\w+"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="members">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="3 player/s allowed"/>
+                                        <enumeration value="2 player/s allowed"/>
+                                        <enumeration value="1 player/s allowed"/>
+                                        <enumeration value="full"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="watchers">
+                                <simpleType>
+                                    <restriction base="int">
+                                        <minInclusive value="0"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="usersList">
+        <complexType>
+            <sequence>
+                <element maxOccurs="unbounded" name="user" minOccurs="0">
+                    <complexType>
+                        <sequence>
+                            <element name="uid">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <minLength value="6"/>
+                                        <maxLength value="15"/>
+                                        <pattern value="\w+"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="status">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="LOGGED_IN"/>
+                                        <enumeration value="TABLECREATOR"/>
+                                        <enumeration value="TABLECREATOR_WAITING"/>
+                                        <enumeration value="PLAYER"/>
+                                        <enumeration value="PLAYER_WAITING"/>
+                                        <enumeration value="OBSERVER"/>
+                                        <enumeration value="OBSERVER_WAITING"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="score" type="int"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="subscription">
+        <complexType>
+            <sequence>
+                <element name="kind">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="watcher"/>
+                            <enumeration value="player"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="tableId">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="subscriptionReply">
+        <complexType>
+            <sequence>
+                <element name="result">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="subscribed"/>
+                            <enumeration value="not subscribed"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="usersAlreadySubscribed">
+                    <complexType>
+                        <sequence>
+                            <element minOccurs="1" maxOccurs="4" name="subscribedUser">
+                                <complexType>
+                                    <sequence>
+                                        <element name="uid" nillable="false">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                  <minLength value="4"/>
+                                                  <maxLength value="15"/>
+                                                  <pattern value="\w+"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="cardsList" minOccurs="0">
+                                            <complexType>
+                                                <sequence>
+                                                  <element maxOccurs="13" minOccurs="1" name="card">
+                                                  <simpleType>
+                                                  <restriction base="string">
+                                                  <enumeration value="AH"/>
+                                                  <enumeration value="2H"/>
+                                                  <enumeration value="3H"/>
+                                                  <enumeration value="4H"/>
+                                                  <enumeration value="5H"/>
+                                                  <enumeration value="6H"/>
+                                                  <enumeration value="7H"/>
+                                                  <enumeration value="8H"/>
+                                                  <enumeration value="9H"/>
+                                                  <enumeration value="10H"/>
+                                                  <enumeration value="JH"/>
+                                                  <enumeration value="QH"/>
+                                                  <enumeration value="KH"/>
+                                                  <enumeration value="AC"/>
+                                                  <enumeration value="2C"/>
+                                                  <enumeration value="3C"/>
+                                                  <enumeration value="4C"/>
+                                                  <enumeration value="5C"/>
+                                                  <enumeration value="6C"/>
+                                                  <enumeration value="7C"/>
+                                                  <enumeration value="8C"/>
+                                                  <enumeration value="9C"/>
+                                                  <enumeration value="10C"/>
+                                                  <enumeration value="JC"/>
+                                                  <enumeration value="QC"/>
+                                                  <enumeration value="KC"/>
+                                                  <enumeration value="AD"/>
+                                                  <enumeration value="2D"/>
+                                                  <enumeration value="3D"/>
+                                                  <enumeration value="4D"/>
+                                                  <enumeration value="5D"/>
+                                                  <enumeration value="6D"/>
+                                                  <enumeration value="7D"/>
+                                                  <enumeration value="8D"/>
+                                                  <enumeration value="9D"/>
+                                                  <enumeration value="10D"/>
+                                                  <enumeration value="JD"/>
+                                                  <enumeration value="QD"/>
+                                                  <enumeration value="KD"/>
+                                                  <enumeration value="AS"/>
+                                                  <enumeration value="2S"/>
+                                                  <enumeration value="3S"/>
+                                                  <enumeration value="4S"/>
+                                                  <enumeration value="5S"/>
+                                                  <enumeration value="6S"/>
+                                                  <enumeration value="7S"/>
+                                                  <enumeration value="8S"/>
+                                                  <enumeration value="9S"/>
+                                                  <enumeration value="10S"/>
+                                                  <enumeration value="JS"/>
+                                                  <enumeration value="QS"/>
+                                                  <enumeration value="KS"/>
+                                                  </restriction>
+                                                  </simpleType>
+                                                  </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                        <element minOccurs="0" name="cardOnTable">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                  <enumeration value="AH"/>
+                                                  <enumeration value="2H"/>
+                                                  <enumeration value="3H"/>
+                                                  <enumeration value="4H"/>
+                                                  <enumeration value="5H"/>
+                                                  <enumeration value="6H"/>
+                                                  <enumeration value="7H"/>
+                                                  <enumeration value="8H"/>
+                                                  <enumeration value="9H"/>
+                                                  <enumeration value="10H"/>
+                                                  <enumeration value="JH"/>
+                                                  <enumeration value="QH"/>
+                                                  <enumeration value="KH"/>
+                                                  <enumeration value="AC"/>
+                                                  <enumeration value="2C"/>
+                                                  <enumeration value="3C"/>
+                                                  <enumeration value="4C"/>
+                                                  <enumeration value="5C"/>
+                                                  <enumeration value="6C"/>
+                                                  <enumeration value="7C"/>
+                                                  <enumeration value="8C"/>
+                                                  <enumeration value="9C"/>
+                                                  <enumeration value="10C"/>
+                                                  <enumeration value="JC"/>
+                                                  <enumeration value="QC"/>
+                                                  <enumeration value="KC"/>
+                                                  <enumeration value="AD"/>
+                                                  <enumeration value="2D"/>
+                                                  <enumeration value="3D"/>
+                                                  <enumeration value="4D"/>
+                                                  <enumeration value="5D"/>
+                                                  <enumeration value="6D"/>
+                                                  <enumeration value="7D"/>
+                                                  <enumeration value="8D"/>
+                                                  <enumeration value="9D"/>
+                                                  <enumeration value="10D"/>
+                                                  <enumeration value="JD"/>
+                                                  <enumeration value="QD"/>
+                                                  <enumeration value="KD"/>
+                                                  <enumeration value="AS"/>
+                                                  <enumeration value="2S"/>
+                                                  <enumeration value="3S"/>
+                                                  <enumeration value="4S"/>
+                                                  <enumeration value="5S"/>
+                                                  <enumeration value="6S"/>
+                                                  <enumeration value="7S"/>
+                                                  <enumeration value="8S"/>
+                                                  <enumeration value="9S"/>
+                                                  <enumeration value="10S"/>
+                                                  <enumeration value="JS"/>
+                                                  <enumeration value="QS"/>
+                                                  <enumeration value="KS"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="unsubscription">
+        <complexType>
+            <sequence>
+                <element maxOccurs="1" minOccurs="1" name="tableId">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="goodbyeMsg" type="string"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="unsubscriptionReply">
+        <complexType>
+            <sequence>
+                <element name="result">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="unsubscripted"/>
+                            <enumeration value="problem during unsubscription"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="userHasLeftTheTable">
+        <complexType>
+            <sequence>
+                <element name="userThatHasLeft">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="botName">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="4"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="userHasJoinedTheTable">
+        <complexType>
+            <sequence>
+                <element name="userThatHasJoined">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="gameStarted" type="boolean"/>
+                <element name="firstPlayer">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="4"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="move">
+        <complexType>
+            <sequence>
+                <element maxOccurs="1" minOccurs="1" name="card">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="AH"/>
+                            <enumeration value="2H"/>
+                            <enumeration value="3H"/>
+                            <enumeration value="4H"/>
+                            <enumeration value="5H"/>
+                            <enumeration value="6H"/>
+                            <enumeration value="7H"/>
+                            <enumeration value="8H"/>
+                            <enumeration value="9H"/>
+                            <enumeration value="10H"/>
+                            <enumeration value="JH"/>
+                            <enumeration value="QH"/>
+                            <enumeration value="KH"/>
+                            <enumeration value="AC"/>
+                            <enumeration value="2C"/>
+                            <enumeration value="3C"/>
+                            <enumeration value="4C"/>
+                            <enumeration value="5C"/>
+                            <enumeration value="6C"/>
+                            <enumeration value="7C"/>
+                            <enumeration value="8C"/>
+                            <enumeration value="9C"/>
+                            <enumeration value="10C"/>
+                            <enumeration value="JC"/>
+                            <enumeration value="QC"/>
+                            <enumeration value="KC"/>
+                            <enumeration value="AD"/>
+                            <enumeration value="2D"/>
+                            <enumeration value="3D"/>
+                            <enumeration value="4D"/>
+                            <enumeration value="5D"/>
+                            <enumeration value="6D"/>
+                            <enumeration value="7D"/>
+                            <enumeration value="8D"/>
+                            <enumeration value="9D"/>
+                            <enumeration value="10D"/>
+                            <enumeration value="JD"/>
+                            <enumeration value="QD"/>
+                            <enumeration value="KD"/>
+                            <enumeration value="AS"/>
+                            <enumeration value="2S"/>
+                            <enumeration value="3S"/>
+                            <enumeration value="4S"/>
+                            <enumeration value="5S"/>
+                            <enumeration value="6S"/>
+                            <enumeration value="7S"/>
+                            <enumeration value="8S"/>
+                            <enumeration value="9S"/>
+                            <enumeration value="10S"/>
+                            <enumeration value="JS"/>
+                            <enumeration value="QS"/>
+                            <enumeration value="KS"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="moveReply">
+        <complexType>
+            <sequence>
+                <element name="moveOf">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element maxOccurs="1" minOccurs="1" name="card">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="AH"/>
+                            <enumeration value="2H"/>
+                            <enumeration value="3H"/>
+                            <enumeration value="4H"/>
+                            <enumeration value="5H"/>
+                            <enumeration value="6H"/>
+                            <enumeration value="7H"/>
+                            <enumeration value="8H"/>
+                            <enumeration value="9H"/>
+                            <enumeration value="10H"/>
+                            <enumeration value="JH"/>
+                            <enumeration value="QH"/>
+                            <enumeration value="KH"/>
+                            <enumeration value="AC"/>
+                            <enumeration value="2C"/>
+                            <enumeration value="3C"/>
+                            <enumeration value="4C"/>
+                            <enumeration value="5C"/>
+                            <enumeration value="6C"/>
+                            <enumeration value="7C"/>
+                            <enumeration value="8C"/>
+                            <enumeration value="9C"/>
+                            <enumeration value="10C"/>
+                            <enumeration value="JC"/>
+                            <enumeration value="QC"/>
+                            <enumeration value="KC"/>
+                            <enumeration value="AD"/>
+                            <enumeration value="2D"/>
+                            <enumeration value="3D"/>
+                            <enumeration value="4D"/>
+                            <enumeration value="5D"/>
+                            <enumeration value="6D"/>
+                            <enumeration value="7D"/>
+                            <enumeration value="8D"/>
+                            <enumeration value="9D"/>
+                            <enumeration value="10D"/>
+                            <enumeration value="JD"/>
+                            <enumeration value="QD"/>
+                            <enumeration value="KD"/>
+                            <enumeration value="AS"/>
+                            <enumeration value="2S"/>
+                            <enumeration value="3S"/>
+                            <enumeration value="4S"/>
+                            <enumeration value="5S"/>
+                            <enumeration value="6S"/>
+                            <enumeration value="7S"/>
+                            <enumeration value="8S"/>
+                            <enumeration value="9S"/>
+                            <enumeration value="10S"/>
+                            <enumeration value="JS"/>
+                            <enumeration value="QS"/>
+                            <enumeration value="KS"/>
+                            <enumeration value="NOT A VALID CARD"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element minOccurs="0" name="nextTurnOf">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="handFinished">
+        <complexType>
+            <sequence>
+                <element name="handWinner">
+                    <simpleType>
+                        <restriction base="string">
+                            <pattern value="\w+"/>
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="gameover">
+        <complexType>
+            <sequence>
+                <element name="tableId">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="reason">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="creator has left the game"/>
+                            <enumeration value="there is a winner"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+                <element name="winnerIs">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="15"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="ping">
+        <complexType>
+            <sequence>
+                <element name="uid">
+                    <simpleType>
+                        <restriction base="string">
+                            <minLength value="6"/>
+                            <maxLength value="10"/>
+                            <pattern value="\w+"/>
+                        </restriction>
+                    </simpleType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

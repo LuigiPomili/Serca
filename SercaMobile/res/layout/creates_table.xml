@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  	<TextView
+		android:id="@+id/lblCTNameMyTable"
+		android:layout_width="95px"
+		android:layout_height="25px"
+		android:text="Table name:"
+		android:layout_x="16px"
+		android:layout_y="8px">
+	</TextView>
+	<TextView
+		android:id="@+id/txtCTNameMyTable"
+		android:layout_width="189px"
+		android:layout_height="22px"
+		android:layout_x="116px"
+		android:layout_y="8px">
+	</TextView>
+	<TextView
+		android:id="@+id/lblNumBot"
+		android:layout_width="121px"
+		android:layout_height="21px"
+		android:text="Number of bots:"
+		android:layout_x="16px"
+		android:layout_y="37px">
+	</TextView>
+	<RadioGroup
+		android:id="@+id/rdgroup"
+		android:layout_width="294px"
+		android:layout_height="197px"
+		android:layout_x="18px"
+		android:layout_y="60px">
+		<RadioButton
+			android:id="@+id/rdb0bot"
+			android:layout_width="wrap_content"
+			android:layout_height="41px"
+			android:text="0 bot"
+			android:checked="true"
+			android:layout_x="24px"
+			android:layout_y="81px">
+		</RadioButton>
+		<RadioButton
+			android:id="@+id/rdb1bot"
+			android:layout_width="wrap_content"
+			android:layout_height="40px"
+			android:text="1 bot"
+			android:layout_x="24px"
+			android:layout_y="126px">
+		</RadioButton>
+		<RadioButton
+			android:id="@+id/rdb2bot"
+			android:layout_width="wrap_content"
+			android:layout_height="40px"
+			android:text="2 bots"
+			android:layout_x="24px"
+			android:layout_y="170px">
+		</RadioButton>
+		<RadioButton
+			android:id="@+id/rdb3bot"
+			android:layout_width="wrap_content"
+			android:layout_height="42px"
+			android:text="3 bots"
+			android:layout_x="24px"
+			android:layout_y="213px">
+		</RadioButton>
+	</RadioGroup>
+	<Button
+		android:id="@+id/cmdCreaMyTable"
+		android:layout_width="74px"
+		android:layout_height="42px"
+		android:text="Creates"
+		android:layout_x="218px"
+		android:layout_y="261px">
+	</Button>
+</AbsoluteLayout>

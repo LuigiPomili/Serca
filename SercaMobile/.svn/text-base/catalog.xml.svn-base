@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/home/tappof/NetBeansProjects/Serca/SercaProtocolJAXB/../../EnterpriseApplication1/EnterpriseApplication1-war/src/java/protocol/registrazione/registrazione.xsd" uri="xml-resources/jaxb/RegistrazioneJAXBBinding/registrazione.xsd"/>
+    <system systemId="file:/home/tappof/NetBeansProjects/Serca/SercaProtocolJAXB/src/it/unibo/cs/swarch/serca/protocol/xml/reglog.xsd" uri="xml-resources/jaxb/RegistrazioneJAXBBinding/reglog.xsd"/>
+    <system systemId="file:/home/tappof/NetBeansProjects/Serca/SercaProtocolJAXB/src/it/unibo/cs/swarch/serca/protocol/xml/login.xsd" uri="xml-resources/jaxb/LoginJAXBBinding/login.xsd"/>
+    <system systemId="file:/home/tappof/NetBeansProjects/Serca/SercaProtocolJAXB/src/it/unibo/cs/swarch/serca/protocol/xml/registrazione.xsd" uri="xml-resources/jaxb/RegistrazioneJAXBBinding/registrazione.xsd"/>
+    <system systemId="file:/home/tappof/NetBeansProjects/Serca/SercaProtocolJAXB/src/it/unibo/cs/swarch/serca/protocol/xsd/sercaProtocol.xsd" uri="xml-resources/jaxb/SercaProtocolBinding/sercaProtocol.xsd"/>
+    <system systemId="file:/home/tappof/NetBeansProjects/serca~sercasvn/Serca/SercaProtocolJAXB/src/it/unibo/cs/swarch/serca/protocol/xsd/sercaProtocol.xsd" uri="xml-resources/jaxb/SercaProtocolBinding/sercaProtocol.xsd"/>
+</catalog>

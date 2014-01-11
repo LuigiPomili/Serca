@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="it.unibo.cs.swarch.sercamobile"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="3" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".SercaMobileActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TableListActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".UserListActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".RegistrationActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".ChatActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".MyTabActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".CreatesTableActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name=".TabTableActivity"
+				  android:label="@string/app_name">
+		</activity>
+		<activity android:name="it.unibo.cs.swarch.sercamobile.TableCreatedActivity"
+				  android:label="@string/app_name">
+		</activity>
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>

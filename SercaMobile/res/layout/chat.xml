@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout
+android:id="@+id/widget52"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<TextView
+android:id="@+id/txtChatReceve"
+android:layout_width="fill_parent"
+android:layout_height="370px"
+android:layout_x="0px"
+android:layout_y="3px"
+android:background="#ffffffff">
+</TextView>
+<EditText 
+android:id="@+id/txtChatSend" 
+android:layout_height="wrap_content" 
+android:layout_y="379px" 
+android:layout_x="0px" 
+android:layout_width="247px">
+    <requestFocus></requestFocus>
+</EditText>
+<Button
+android:id="@+id/butSend"
+android:layout_width="70px"
+android:layout_height="wrap_content"
+android:text="Send"
+android:layout_x="250px"
+android:layout_y="379px"
+>
+</Button>
+</AbsoluteLayout>
